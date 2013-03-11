@@ -1,0 +1,506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--
+    This section defines project-level properties.
+
+    AssemblyName
+      Name of the output assembly.
+    Configuration
+      Specifies a default value for debug.
+    OutputType
+      Must be "Library" for VSTO.
+    Platform
+      Specifies what CPU the output of this project can run on.
+    NoStandardLibraries
+      Set to "false" for VSTO.
+    RootNamespace
+      In C#, this specifies the namespace given to new files. In VB, all objects are
+      wrapped in this namespace at runtime.
+  -->
+  <PropertyGroup>
+    <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ECCDB219-149D-444A-94E7-DF118D9A6EF1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <RootNamespace>CustomVote.AddIn.PowerPoint2010</RootNamespace>
+    <AssemblyName>CustomVote.AddIn.PowerPoint2010</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <DefineConstants>VSTO40</DefineConstants>
+    <IsWebBootstrapper>False</IsWebBootstrapper>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <PublishUrl>C:\Users\LEAPFACTOR\Documents\SVNWorkbooks\pubCustomVote2\</PublishUrl>
+    <InstallUrl />
+    <TargetCulture>es</TargetCulture>
+    <ApplicationVersion>1.0.0.45</ApplicationVersion>
+    <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>days</UpdateIntervalUnits>
+    <ProductName>CustomVote.AddIn.PowerPoint2010</ProductName>
+    <PublisherName />
+    <SupportUrl />
+    <FriendlyName>CustomVote.AddIn.PowerPoint2010</FriendlyName>
+    <OfficeApplicationDescription />
+    <LoadBehavior>3</LoadBehavior>
+  </PropertyGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <PropertyGroup>
+    <!--
+      OfficeApplication
+        Add-in host application
+    -->
+    <OfficeApplication>PowerPoint</OfficeApplication>
+  </PropertyGroup>
+  <!--
+    This section defines properties that are set when the "Debug" configuration is selected.
+
+    DebugSymbols
+      If "true", create symbols (.pdb). If "false", do not create symbols.
+    DefineConstants
+      Constants defined for the preprocessor.
+    EnableUnmanagedDebugging
+      If "true", starting the debugger will attach both managed and unmanaged debuggers.
+    Optimize
+      If "true", optimize the build output. If "false", do not optimize.
+    OutputPath
+      Output path of project relative to the project file.
+    WarningLevel
+      Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!--
+    This section defines properties that are set when the "Release" configuration is selected.
+
+    DebugSymbols
+      If "true", create symbols (.pdb). If "false", do not create symbols.
+    DefineConstants
+      Constants defined for the preprocessor.
+    EnableUnmanagedDebugging
+      If "true", starting the debugger will attach both managed and unmanaged debuggers.
+    Optimize
+      If "true", optimize the build output. If "false", do not optimize.
+    OutputPath
+      Output path of project relative to the project file.
+    WarningLevel
+      Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!--
+    This section enables pre- and post-build steps. However, in VSTO use
+    MSBuild tasks instead of these properties.       
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CustomVote.AddIn.PowerPoint2010_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>3DA3FFF33FED604171488BDD9C342C20A220D134</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <!--
+    This section specifies references for the project.
+  -->
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LumenWorks.Framework.IO">
+      <HintPath>..\..\..\..\..\..\DropBox\Dropbox\Orteaga\Pruebas\lib\LumenWorks.Framework.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.v4.0.Framework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.Common.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.PowerPoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <!--
+    This section defines the user source files that are part of the project.
+     
+    A "Compile" element specifies a source file to compile.
+    An "EmbeddedResource" element specifies an .resx file for embedded resources.
+    A "None" element specifies a file that is not to be passed to the compiler (for instance, 
+    a text file or XML file).
+    The "AppDesigner" element specifies the directory where the application properties files
+    can be found.
+  -->
+  <ItemGroup>
+    <Compile Include="ControlsManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlsManagement.Designer.cs">
+      <DependentUpon>ControlsManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomVoteRibbon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomVoteRibbon.Designer.cs">
+      <DependentUpon>CustomVoteRibbon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hardware\Connecting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hardware\Connecting.Designer.cs">
+      <DependentUpon>Connecting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hardware\ConnectionManager.cs" />
+    <Compile Include="Hardware\Configuration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hardware\Configuration.Designer.cs">
+      <DependentUpon>Configuration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hardware\HardwareTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hardware\HardwareTest.Designer.cs">
+      <DependentUpon>HardwareTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hardware\KeypadPairing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hardware\KeypadPairing.Designer.cs">
+      <DependentUpon>KeypadPairing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hardware\KeyStatusValues.cs" />
+    <Compile Include="Hardware\PreviewVotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hardware\PreviewVotes.Designer.cs">
+      <DependentUpon>PreviewVotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hardware\RetrieveVotesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hardware\RetrieveVotesForm.Designer.cs">
+      <DependentUpon>RetrieveVotesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\CustomVoteLib.cs" />
+    <Compile Include="Helpers\ExcelHelper.cs" />
+    <Compile Include="Helpers\ItemList.cs" />
+    <Compile Include="Helpers\PowerPointHelper.cs" />
+    <Compile Include="Helpers\Serializer.cs" />
+    <Compile Include="Helpers\SunVoteHelper.cs" />
+    <Compile Include="Interfaces\IResultView.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="CustomVoteRibbon.resx">
+      <DependentUpon>CustomVoteRibbon.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hardware\Configuration.resx">
+      <DependentUpon>Configuration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hardware\Connecting.resx">
+      <DependentUpon>Connecting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hardware\HardwareTest.resx">
+      <DependentUpon>HardwareTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hardware\KeypadPairing.resx">
+      <DependentUpon>KeypadPairing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hardware\PreviewVotes.resx">
+      <DependentUpon>PreviewVotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hardware\RetrieveVotesForm.resx">
+      <DependentUpon>RetrieveVotesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Questions\AnswerView.resx">
+      <DependentUpon>AnswerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Questions\CreateQuestionView.resx">
+      <DependentUpon>CreateQuestionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Results\CreateResultView.resx">
+      <DependentUpon>CreateResultView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Results\NormalConfigView.resx">
+      <DependentUpon>NormalConfigView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Results\RankingConfigView.resx">
+      <DependentUpon>RankingConfigView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="CustomVote.AddIn.PowerPoint2010_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Questions\AnswerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Questions\AnswerView.Designer.cs">
+      <DependentUpon>AnswerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Questions\CreateQuestionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Questions\CreateQuestionView.Designer.cs">
+      <DependentUpon>CreateQuestionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Questions\Data\AnswerComputation.cs" />
+    <Compile Include="Questions\Data\AnswerEntity.cs" />
+    <Compile Include="Questions\Data\ComputationType.cs" />
+    <Compile Include="Questions\Data\QuestionSlideConfiguration.cs" />
+    <Compile Include="Results\CreateResultView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Results\CreateResultView.Designer.cs">
+      <DependentUpon>CreateResultView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Results\Data\AnswerVotedEntityBase.cs" />
+    <Compile Include="Results\Data\CrossComparisonEntity.cs" />
+    <Compile Include="Results\Data\CrossComparizonConfig.cs" />
+    <Compile Include="Results\Data\MirrorAnswerVotedEntity.cs" />
+    <Compile Include="Results\Data\NormalConfig.cs" />
+    <Compile Include="Results\Data\RankingAnswerVotedEntity.cs" />
+    <Compile Include="Results\Data\NormalAnswerVotedEntity.cs" />
+    <Compile Include="Results\Data\RankingConfig.cs" />
+    <Compile Include="Results\Data\RankingVotes.cs" />
+    <Compile Include="Results\Data\ResultSlideConfiguration.cs" />
+    <Compile Include="Results\Data\ResultType.cs" />
+    <Compile Include="Results\Data\SelectedQuetions.cs" />
+    <Compile Include="Results\Data\ValueOrder.cs" />
+    <Compile Include="Results\Data\ValueType.cs" />
+    <Compile Include="Results\NormalConfigView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Results\NormalConfigView.Designer.cs">
+      <DependentUpon>NormalConfigView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Results\RankingConfigView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Results\RankingConfigView.Designer.cs">
+      <DependentUpon>RankingConfigView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Results\strategies\CrossComparisonStrategy.cs" />
+    <Compile Include="Results\strategies\IResultStragy.cs" />
+    <Compile Include="Results\strategies\MirrorStrategy.cs" />
+    <Compile Include="Results\strategies\NormalStrategy.cs" />
+    <Compile Include="Results\strategies\RankingStrategy.cs" />
+    <Compile Include="Session\HardwareConfiguration.cs" />
+    <Compile Include="Session\SessionManager.cs" />
+    <Compile Include="ThisAddIn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="ThisAddIn.Designer.xml">
+      <DependentUpon>ThisAddIn.cs</DependentUpon>
+    </None>
+    <Compile Include="ThisAddIn.Designer.cs">
+      <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SunVoteARS">
+      <Guid>{B1729789-8836-4E53-8A23-4C117FD80A84}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VSTAProjectPackageLib">
+      <Guid>{6BCBC023-7688-46F6-84B8-62238D26BD35}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\AnswerCheck.png" />
+    <Content Include="Resources\AnswerUncheck.png" />
+    <Content Include="Resources\control-stop-square.png" />
+    <Content Include="Resources\chronometer-1.png" />
+    <Content Include="Resources\chronometerstop-1.png" />
+    <Content Include="Resources\LogoCancel.png" />
+    <Content Include="Resources\LogoOK.png" />
+    <Content Include="Resources\magnifier-zoom-actual-equal.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono0.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono1.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono10.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono11.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono12.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono13.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono14.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono15.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono16.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono17.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono18.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono19.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono2.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono20.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono21.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono22.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono23.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono24.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono25.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono26.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono27.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono28.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono29.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono3.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono30.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono4.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono5.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono6.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono7.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono8.png" />
+    <Content Include="Resources\TimerAnimFrames\Crono9.png" />
+  </ItemGroup>
+  <!-- Include the build rules for a C# project. -->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- Include additional build rules for an Office application add-in. -->
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets" />
+  <!-- This section defines VSTO properties that describe the host-changeable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
+        <ProjectProperties HostName="PowerPoint" HostPackage="{20A848B8-E01F-4801-962E-25DB0FF57389}" OfficeVersion="14.0" VstxVersion="4.0" ApplicationType="PowerPoint" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\14.0\PowerPoint\InstallRoot\Path#powerpnt.exe" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
+        <Host Name="PowerPoint" GeneratedCodeNamespace="CustomVote.AddIn.PowerPoint2010" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
+          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" PublishedHash="F273C3F47FB7F599EA865EB90240A5DD03C707FB" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
+        </Host>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

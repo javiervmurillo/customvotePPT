@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomVote.AddIn.PowerPoint2010", "CustomVote.AddIn.PowerPoint2010\CustomVote.AddIn.PowerPoint2010.csproj", "{ECCDB219-149D-444A-94E7-DF118D9A6EF1}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CustomVote.Setup", "CustomVote.Setup\CustomVote.Setup.vdproj", "{CE6564D3-4E5F-4732-8582-323255F5BA91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomVote.Setup.CustomActions", "CustomVote.Setup.CustomActions\CustomVote.Setup.CustomActions.csproj", "{6142AE54-058E-4B52-9356-87052E04923D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECCDB219-149D-444A-94E7-DF118D9A6EF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECCDB219-149D-444A-94E7-DF118D9A6EF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECCDB219-149D-444A-94E7-DF118D9A6EF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECCDB219-149D-444A-94E7-DF118D9A6EF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE6564D3-4E5F-4732-8582-323255F5BA91}.Debug|Any CPU.ActiveCfg = Debug
+		{CE6564D3-4E5F-4732-8582-323255F5BA91}.Release|Any CPU.ActiveCfg = Release
+		{6142AE54-058E-4B52-9356-87052E04923D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6142AE54-058E-4B52-9356-87052E04923D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6142AE54-058E-4B52-9356-87052E04923D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6142AE54-058E-4B52-9356-87052E04923D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
